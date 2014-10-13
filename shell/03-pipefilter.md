@@ -1,11 +1,15 @@
 
 #### Objectives
+
+---
+
 *   Redirect a command's output to a file.
 *   Process a file instead of keyboard input using redirection.
 *   Construct command pipelines with two or more stages.
 *   Explain what usually happens if a program or pipeline isn't given any input to process.
 *   Explain Unix's "small pieces, loosely joined" philosophy.
 
+---
 
 Now that we know a few basic commands, we can finally look at the shell's most powerful feature:
 the ease with which it lets us combine existing programs in new ways.
@@ -22,7 +26,7 @@ Let's go into that directory with `cd` and run the command `wc *.pdb`.
 `wc` is the "word count" command: it counts the number of lines, words, and characters in files.
 The `*` in `*.pdb` matches zero or more characters, so the shell turns `*.pdb` into a complete list of `.pdb` files:
 
-```unix
+```
 $ cd molecules
 $ wc *.pdb
 
@@ -61,7 +65,7 @@ $ wc *.pdb
 
 If we run `wc -l` instead of just `wc`, the output shows only the number of lines per file:
 
-```unix
+```
 $ wc -l *.pdb
 
   20  cubane.pdb
@@ -78,7 +82,7 @@ We can also use `-w` to get only the number of words, or `-c` to get only the nu
 Which of these files is shortest? It's an easy question to answer when there are only six files,
 but what if there were 6000? Our first step toward a solution is to run the command:
 
-```unix
+```
 $ wc -l *.pdb > lengths
 ```
 
@@ -87,7 +91,7 @@ The shell will create the file if it doesn't exist, or overwrite the contents of
 (This is why there is no screen output: everything that `wc` would have printed has 
 gone into the file `lengths` instead.) `ls lengths` confirms that the file exists:
 
-```unix
+```
 $ ls lengths
 ```
 
@@ -102,7 +106,7 @@ $ cat lengths
 Now let's use the `sort` command to sort its contents. This does *not* change the file;
 instead, it sends the sorted result to the screen:
 
-```unix
+```
 $ sort lengths
 ```
 
@@ -111,7 +115,7 @@ by putting `> sorted-lengths` after the command, just as we used `> lengths` to 
 output of `wc` into `lengths`. Once we've done that, we can run another command 
 called `head` to get the first few lines in `sorted-lengths`:
 
-```unix
+```
 $ sort lengths > sorted-lengths
 $ head -1 sorted-lengths
 ```
@@ -126,7 +130,7 @@ even once you understand what `wc`, `sort`, and `head` do,
 all those intermediate files make it hard to follow what's going on.
 We can make it easier to understand by running `sort` and `head` together:
 
-```unix
+```
 $ sort lengths | head -1
 ```
 
@@ -138,7 +142,7 @@ we don't have to know or care.
 
 We can use another pipe to send the output of `wc` directly to `sort`, which then sends its output to `head`:
 
-```unix
+```
 $ wc -l *.pdb | sort | head -1
 ```
 
@@ -213,14 +217,14 @@ Nelle has run her samples through the assay machines
 and created 1520 files in the `north-pacific-gyre/2012-07-03` directory described earlier.
 As a quick sanity check, she types:
 
-```unix
+```
 $ cd north-pacific-gyre/2012-07-03
 $ wc -l *.txt
 ```
 
 The output is 1520 lines that look like this:
 
-```unix
+```
 300 NENE01729A.txt
 300 NENE01729B.txt
 300 NENE01736A.txt
