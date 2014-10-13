@@ -36,4 +36,10 @@ To use TACC systems, three things are required:
 3. an active **Allocation** - an "allocation" is a quota of computing time or storage space devoted to a project.  A project can have allocations on several different systems to serve their research goals.  Allocations are usually active for a year, and principle investigators or their delegates can renew allocations each year for more computing resources.  
 
 
+Once you have all three of those things, you should be able to login to a compute system (whichever ones your Allocation gives you access to) through SSH.  Mac users will likely use their "Terminal" to do this, while Windows users can use "Git Bash" or another third party application.  You should use the same username and password that you use in the Portal.
 
+## Challenges
+
+*	Login to the portal and check what projects you are involved in (there should at least be this training project)
+*	What allocations does that project have?
+*	SSH into Lonestar and look over the "welcome" text
