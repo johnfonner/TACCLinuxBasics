@@ -1,0 +1,1 @@
+The iPython Notebook included here is an interesting example from Software Carpentry.  Software Carpentry has a lot of great Python training material [on Github](https://github.com/swcarpentry/bc) and [on their website](http://www.software-carpentry.org/).
