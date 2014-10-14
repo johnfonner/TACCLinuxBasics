@@ -1,3 +1,28 @@
+iPython Notebook, RStudio, and Matlab at TACC
+====================================
+
+### University of Texas Southwestern Medical Center
+**October 14th, 2014, 9:00am - 12:00pm**
+
+Python, R, and Matlab represent three of the most widely used scripting languages for life sciences research. In three separate 45 minute sessions, you will learn how to access these tools on the high performance computing resources at TACC. 
+
+Participants must register for a TACC account before the class and bring a laptop for the hands-on exercises.
+  
+##Agenda
+
+|Time          | Topic                                | Additional info |
+|--------------|--------------------------------------|-----------------|
+| 9:00 - 9:45  | [iPython Notebook at TACC](ipython/01-notebooks.md)             ||
+| 9:45 - 10:00 | Break between sessions               ||
+|10:00 - 10:45 | [RStudio at TACC](https://github.com/jamescarson3/TACCRStudio/blob/master/README.md)                      ||
+|10:45 - 11:00 | Break between sessions               ||
+|11:00 - 11:45 | [Matlab at TACC](matlab/01-matlab.md)                       ||
+|11:45 - 12:00 | Questions and feedback               ||
+
+
+---  
+---
+
 Intro to High Performance Computing for Life Sciences
 =====================================================
 ---
