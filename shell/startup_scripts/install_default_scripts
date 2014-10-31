@@ -1,0 +1,46 @@
+#!/bin/bash
+# -*- shell-script -*-
+
+#------------------------------------------------------------------------------
+# Note: this file is managed via LosF
+#
+# You should, in general, not edit this file directly as you will 
+# *lose* the contents during the next sync process. Instead, 
+# edit the template file in your local config directory:
+# 
+# /admin/build/admin/config/const_files/Stampede/login/install_default_scripts
+#
+# Questions? karl@tacc.utexas.edu
+#
+#------------------------------------------------------------------------------
+
+
+########################################################################
+# This script saves away any old dotfiles and replaces them with the
+# new startup script in /usr/local/startup_scripts/dot.*
+########################################################################
+
+cd $HOME
+
+if [ ! -d $HOME/.orig ]; then
+   mkdir $HOME/.orig 
+fi
+
+for i in .profile .profile_user .bashrc .cshrc .login .cshrc_user .login_user; do
+    if [ -f ~/$i ]; then
+	mv $i ~/.orig/
+    fi
+done
+
+D=$PWD
+
+for i in $D/dot.* ; do
+    f=${i##*/}                 # form base name (/usr/local/startup_scripts/dot.bashrc -> dot.bashrc)
+    f=${f//dot/}               # strip the dot off ( dot.bashrc -> .bashrc )
+
+    # Delete the LOSF sync notice
+    sed -e '/^## START_BLOCK ##/,/^## END_BLOCK ##/d' < $i > $HOME/$f
+    chmod 700 $HOME/$f
+done
+
+   

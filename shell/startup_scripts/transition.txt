@@ -1,0 +1,35 @@
+
+TACC is ending support for ~/.profile_user for bash users, and ~/.cshrc_user,
+~/.login_user for csh users.
+
+  Maverick Status: Support ended on Sept. 24, 2014.
+  Stampede Status: Support for ~/.profile_user ends on or about Oct. 28, 2014.
+                   Support for ~/.cshrc_user and ~/.login_user ends 
+                   on or about about Dec. 9, 2014. 
+
+We recommend you run the following command: 
+ 
+   $ /usr/local/startup_scripts/install_default_scripts
+ 
+This safely moves your current startup scripts into a new subdirectory named
+~/.orig and installs the new startup script template files into your
+home directory.  Don't forget to execute "ls -a ~/.orig" to see the contents of
+the ~/.orig directory.
+
+---------------
+For Bash users:
+---------------
+
+   Please merge the contents of ~/.orig/.profile_user into ~/.bashrc.  
+   Your new ~/.bashrc contains comments and instructions that will
+   help you accomplish this transition. 
+
+------------------
+For C-shell users:
+------------------
+
+   Please merge the contents ~/.orig/.cshrc_user into ~/.cshrc and the
+   contents of ~/.orig/.login_user into ~/.login.  There are comments 
+   and instructions in both ~/.login and ~/.cshrc that will help you
+   accomplish this transition. 
+
