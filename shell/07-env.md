@@ -15,3 +15,4 @@ Every time you login to a system, Linux executes a set of "startup scripts" befo
 
 For ```bash``` users, there are two startup scripts that are important named ```.bashrc``` and ```.profile```. They are both located in your home directory, if they are present, but just typing ```ls``` won't list them.  In Linux, files starting with a "." are hidden unless you really want to see "all" files using ```ls -a```.
 
+To set these scripts up, we have examples in the "startup_scripts" directory.  As an interactive exercise, we will look through these now.
