@@ -20,6 +20,7 @@
 # new startup script in /usr/local/startup_scripts/dot.*
 ########################################################################
 
+D=$(pwd)
 cd $HOME
 
 if [ ! -d $HOME/.orig ]; then
@@ -32,13 +33,14 @@ for i in .profile .profile_user .bashrc .cshrc .login .cshrc_user .login_user; d
     fi
 done
 
-D=$PWD
 
-for i in $D/dot.* ; do
+for i in $(ls $D/dot.*) ; do
     f=${i##*/}                 # form base name (/usr/local/startup_scripts/dot.bashrc -> dot.bashrc)
     f=${f//dot/}               # strip the dot off ( dot.bashrc -> .bashrc )
 
     # Delete the LOSF sync notice
+    echo $i
+    echo "$HOME/$f"
     sed -e '/^## START_BLOCK ##/,/^## END_BLOCK ##/d' < $i > $HOME/$f
     chmod 700 $HOME/$f
 done
